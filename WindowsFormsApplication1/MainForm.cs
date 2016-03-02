@@ -41,7 +41,7 @@ namespace GeneradorScriptPaquetesOracle
                 else
                     rutaFichero = textBox2.Text + packagesNames[i] + "_" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".sql";     //Ruta del fichero si se ha introdudico una ruta
 
-                conn = new OracleConnection(oradb);    //Conectamos a la base de datos con la cadena de carga
+                conn = new OracleConnection(oradb);    //Conectamos a la base de datos con la cadena de conexion
 
                 totalLines = countLines(oradb, packagesNames[i], "HEADER") + countLines(oradb, packagesNames[i], "BODY");
 
