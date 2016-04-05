@@ -66,6 +66,8 @@ namespace GeneradorScriptPaquetesOracle
 
                     OracleDataReader dr = cmd.ExecuteReader();      //Resultados de la query
 
+                    await file.WriteAsync("CREATE OR REPLACE ");
+
                     while (dr.Read())
                     {
                         if (progressBar1.Value < totalLines)
@@ -82,6 +84,8 @@ namespace GeneradorScriptPaquetesOracle
                     cmd.CommandType = CommandType.Text;
 
                     dr = cmd.ExecuteReader();
+
+                    await file.WriteAsync("CREATE OR REPLACE ");
 
                     while (dr.Read())
                     {
